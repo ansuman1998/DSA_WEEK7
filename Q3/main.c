@@ -16,10 +16,13 @@ heapifydown(int root, int n)
     int minchild;
     for(i=root;i<n/2;i++)
     {
-        if(heap[2*i+1]<heap[2*i+2])
+        if((2*i+2)< n && heap[2*i+1]<heap[2*i+2])
             minchild=2*i+1;
-        else
+        else if((2*i+2)< n && heap[2*i+1]>=heap[2*i+2])
             minchild=2*i+2;
+        else
+            minchild=2*i+1;
+
         if(heap[minchild]<heap[i])
         {
             temp=heap[i];
