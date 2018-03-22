@@ -11,6 +11,7 @@ int heapsize;
 heapifydown(int root, int n)
 {
     int i;
+    printf("Heapifying down from %d\n", heap[root]);
     int temp;
     int minchild;
     for(i=root;i<n/2;i++)
@@ -68,6 +69,11 @@ int main()
     for(i=0;i<n;i++)
         for(j=0;j<k;j++)
         scanf("%d", &a[i][j]);
+    /*for(i=0;i<n;i++)
+        {for(j=0;j<k;j++)
+        printf("%d ", a[i][j]);
+        printf("\n");
+        }*/
 /////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
     result=(int *)malloc(n*k*sizeof(int));
@@ -79,6 +85,10 @@ int main()
         lastindex[i]=0;
     for(i=0;i<n;i++)
         heap[i]=a[i][0];
+
+    for(i=0;i<n;i++)
+        printf("%d ", heap[i]);
+    printf("\n");
 
     heapsize=n;
     buildmaxheap();
